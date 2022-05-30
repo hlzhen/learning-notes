@@ -42,17 +42,36 @@
 
 # SQL
  . 结构化查询语言，是一门标准的通用语言。
+ . SOL就是能让用户和关系型數据库进行交互的一种语言
 
 # 三者之间的关系
  . DBMS -(执行)-> SQL -(操作)-> DB
 ```
 
-## 3. SQL分类与实例
-### 3.1 SQL分类
+## 3. SQL分类
 ```markdown
-# DDL(Data Definition Language):数据定义语言
-# DML(Data Manipulation Language):数据操纵语言
-# DDL(Data Definition Language):数据定义语言 
-# DML(Data Manipulation Language):数据操纵语言
-# DCL(Data Control Language):数据控制语言
+# DDL(Data Definition Language) - 数据定义语言
+ . 可以创建与修改数据库本身。关键字如下：
+ . create
+ . alter
+ . drop
+ . rename 
+ . truncate
+# DML(Data Manipulation Language) - 数据操作语言
+ . 可以对数据库中的数据进行增、删、改、查操作。关键字如下
+ . insert
+ . delete 
+ . update
+ . select
+# DCL(Data Control Language) - 数据控制语言
+ . 用于维护数据库操作的安全性。关键字如下：
+ . commit
+ . rollback
+ . savepoint
+ . grant
+ . revoke
+
+ `注意`: 
+  . DQL(Data Query Language)- 数据查询语言 其实是 数据操作语言的一种分支也可以看作是一种分类
+  . TCL(Transaction Control Language) - 事物控制语言 也是 数据控制语言的一种分支也可以看作是一种分类
 ```

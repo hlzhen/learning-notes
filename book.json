@@ -14,7 +14,7 @@
   "plugins": [
     "search",
     "search-pro",
-    "highlight",
+    "-highlight",
     "-sharing",
     "code-optimize",
     "sidebar-style",
@@ -23,11 +23,22 @@
     "expandable-chapters-small",
     "tbfed-pagefooter",
     "anchor-navigation-ex",
-    "pageview-count"
+    "pageview-count",
+    "prism",
+    "prism-themes",
+    "-highlight",
+    "emphasize",
+    "theme-comscore",
+    "popup"
   ],
   "pluginsConfig": {
     "github": {
       "url": "https://github.com/hlzhen"
+    },
+    "prism": {
+      "css": [
+        "prism-themes/themes/prism-material-oceanic.min.css"
+      ]
     },
     "code-optimize": {
       "copyButtons": true,

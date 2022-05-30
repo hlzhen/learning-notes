@@ -1,7 +1,7 @@
 # Summary
 
 * [前言](README.md)
-* [Mysql](/mysql/README.md)
-  * [Mysq安装与配置](/mysql/mysql-配置.md)
+* [mysql](/mysql/README.md)
+  * [相关概念](/mysql/mysql-concept.md)
   
 

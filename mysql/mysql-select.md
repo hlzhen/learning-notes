@@ -1,5 +1,10 @@
 # Mysql查询
 
+>[!Tip]
+>注意：
+> 本篇位运算暂时没有写(原因是用的比较少)。
+> 以*号作为所有列的查询语句在开发中并不推荐(请勿作死)。
+
 ## 1.基本查询
 ```sql
 /*
@@ -120,19 +125,19 @@ SELECT * FROM employees WHERE commission_pct = NULL;  #结果:无任何结果
 SELECT 'a' <=> 1, 'ab' <=> null,null <=> null FROM DUAL;  #结果:0,0,1
 ```
 ### 8.2 非符号类比较运算符
-| 运算符号    | 名称             | 解释                                                                            |
-| :---------- | :--------------- | :------------------------------------------------------------------------------ |
-| IS NULL     | 为空运算         | 判断值、字符串、或者表达式  {% em color="#EEEED1" %} 是否为空 {% endem %}。     |
+| 运算符号    | 名称             | 解释                                                                           |
+| :---------- | :--------------- | :----------------------------------------------------------------------------- |
+| IS NULL     | 为空运算         | 判断值、字符串、或者表达式  {% em color="#EEEED1" %} 是否为空 {% endem %}。    |
 | IS NOT NULL | 不为空运算       | 判断值、字符串、或者表达式   {% em color="#EEEED1" %} 是否不为空 {% endem %}。 |
-| LEAST       | 最小值运算       | 在多个值中返回 {% em color="#EEEED1" %}最小值{% endem %}。                      |
-| GREATEST    | 最大值运算       | 在多个值中返回 {% em color="#EEEED1" %}最大值{% endem %}。                      |
-| BETWEEN AND | 两值之间的运算符 | 判断一个值 {% em color="#EEEED1" %}是否在两值之间(包含值){% endem %}。                  |
-| ISNULL      | 为空运算         | 判断值、字符串、或者表达式 {% em color="#EEEED1" %}是否为空{% endem %}。        |
-| IN          | 属于运算符       | 判断一个值 {% em color="#EEEED1" %}是否属于{% endem %}列表中的某个值。          |
-| NOT IN      | 不属于运算符     | 判断一个值是 {% em color="#EEEED1" %}否不属于{% endem %}列表中的某个值。        |
-| LIKE        | 模糊匹配运算符   | 判断一个值{% em color="#EEEED1" %}是否符合模糊匹配{% endem %}的规则。           |
-| REGEXP      | 正则表达式运算符 | 判断一个值{% em color="#EEEED1" %}是否符合正则表达式{% endem %}的规则。         |
-| RLIKE       | 正则表达式运算符 | 判断一个值{% em color="#EEEED1" %}是否符合正则表达式{% endem %}的规则。         |
+| LEAST       | 最小值运算       | 在多个值中返回 {% em color="#EEEED1" %}最小值{% endem %}。                     |
+| GREATEST    | 最大值运算       | 在多个值中返回 {% em color="#EEEED1" %}最大值{% endem %}。                     |
+| BETWEEN AND | 两值之间的运算符 | 判断一个值 {% em color="#EEEED1" %}是否在两值之间(包含值){% endem %}。         |
+| ISNULL      | 为空运算         | 判断值、字符串、或者表达式 {% em color="#EEEED1" %}是否为空{% endem %}。       |
+| IN          | 属于运算符       | 判断一个值 {% em color="#EEEED1" %}是否属于{% endem %}列表中的某个值。         |
+| NOT IN      | 不属于运算符     | 判断一个值是 {% em color="#EEEED1" %}否不属于{% endem %}列表中的某个值。       |
+| LIKE        | 模糊匹配运算符   | 判断一个值{% em color="#EEEED1" %}是否符合模糊匹配{% endem %}的规则。          |
+| REGEXP      | 正则表达式运算符 | 判断一个值{% em color="#EEEED1" %}是否符合正则表达式{% endem %}的规则。        |
+| RLIKE       | 正则表达式运算符 | 判断一个值{% em color="#EEEED1" %}是否符合正则表达式{% endem %}的规则。        |
 ```sql
 /*
     非符号类比较运算符
@@ -201,5 +206,32 @@ SELECT 'shjhkjt' REGEXP '^s', 'shjhkjt' REGEXP 't$', 'shjhkjt' REGEXP 'hk' FROM 
 
 #(REGEXP/RLIKE)正则表达式 .表示不确定字符，匹配shjhkjt是否有k.t格式的字符
 SELECT 'shjhkjt' REGEXP 'k.t' FROM DUAL;
-
 ```
+
+## 9.逻辑运算符
+| 运算符号            | 名称     |
+| :------------------ | :------- |
+| NOT 或 !            | 逻辑非   |
+| AND 或 &&           | 逻辑与   |
+| OR 或 &#124; &#124; | 逻辑或   |
+| XOR                 | 逻辑异或 |
+```sql
+#逻辑运算符 OR AND NOT XOR 查询工资不在6000-8000之间的员工
+SELECT * FROM employees WHERE salary NOT BETWEEN 6000 AND 8000;
+
+#逻辑运算符 OR AND NOT XOR 查询工资不在6000-8000之间的员工
+SELECT * FROM employees WHERE salary NOT BETWEEN 6000 AND 8000;
+
+#逻辑运算符 OR AND NOT XOR 查询部门在10或50的员工信息
+SELECT * FROM employees WHERE department_id = 50 OR department_id = 10;
+
+#逻辑运算符 OR AND NOT XOR 查询部门在50并且工资大于6000的员工信息
+SELECT * FROM employees WHERE department_id = 50 AND salary > 6000;
+
+
+#逻辑运算符 OR AND NOT XOR(追求"异") 只满足一边才需要
+SELECT * FROM employees WHERE department_id = 50 XOR salary > 6000;
+```
+
+>[!Tip]
+> 注意: AND 优先级要高于 OR

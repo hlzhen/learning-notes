@@ -9,5 +9,7 @@
   * [数值函数](/mysql/mysql-numerical-function.md)
   * [字符串函数](/mysql/mysql-string-function.md)
   * [日期时间函数](/mysql/mysql-datetime-function.md)
+  * [流程控制函数](/mysql/mysql-process-function.md)
+  * [加密与解密函数](/mysql/mysql-encryptanddecrypt-function.md)
   
 

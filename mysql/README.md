@@ -74,6 +74,8 @@
  `注意`: 
   . DQL(Data Query Language)- 数据查询语言 其实是 数据操作语言的一种分支也可以看作是一种分类
   . TCL(Transaction Control Language) - 事物控制语言 也是 数据控制语言的一种分支也可以看作是一种分类
+  . DDL的操作一旦执行数据就不可回滚
+  . DML的操作默认情况下一旦执行也是不可回滚的(如需回滚需手动开启 set autocommit=false)
 ```
 
 ## 4.函数

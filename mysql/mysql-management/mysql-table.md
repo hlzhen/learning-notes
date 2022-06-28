@@ -70,7 +70,7 @@ ALTER TABLE myemp001 RENAME TO myemp1;
 
 ## 4.清空表
 ```sql
-#清空表只删除表数据，表结构保留
+#清空表只删除表数据，表结构保留，数据不可回滚
 TRUNCATE TABLE myemp1;
 ```
 

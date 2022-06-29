@@ -4,6 +4,8 @@
 * [Git](/git/README.md)
   * [基本命令](/git/git-bansecommand.md)
 * [Mysql](/mysql/README.md)
+  * [数据类型](/mysql/mysql-datatype.md)
+  * [增删改](/mysql/mysql-idu.md)
   * [查询](/mysql/mysql-select/README.md)
     * [基础查询](/mysql/mysql-select/mysql-select.md)
     * [排序与分页](/mysql/mysql-select/mysql-orderbyandlimit.md)
@@ -17,7 +19,6 @@
     * [GroupBy的使用](/mysql/mysql-select/mysql-groupby.md)
     * [子查询](/mysql/mysql-select/mysql-subquery.md)
   * [DDL](/mysql/mysql-management/README.md)
-    * [数据库基本类型](/mysql/mysql-management/mysql-datatype.md)
     * [数据库的创建与管理](/mysql/mysql-management/mysql-database.md)
     * [数据表的创建与管理](/mysql/mysql-management/mysql-table.md)
   
